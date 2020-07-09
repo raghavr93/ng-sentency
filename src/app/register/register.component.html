@@ -1,0 +1,46 @@
+<div class="login-box">
+      <h2>Register</h2>
+    <div>
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label>Name</label>
+          <input type="text" [class.danger]="name.invalid && name.touched" formControlName="name">
+          <div *ngIf="name.invalid && name.touched">
+            <small class="text-danger" *ngIf="name.errors?.required">Name is required</small>
+          </div>  
+        </div>
+
+        <div>
+          <label>Email</label>
+          <input type="text" [class.danger]="email.invalid && email.touched" formControlName="email">
+          <div *ngIf="email.invalid && email.touched">
+            <small class="text-danger" *ngIf="email.errors?.required">Email is required</small>
+            <small class="text-danger" *ngIf="email.errors?.email">Invalid email format</small>
+          </div>          
+        </div>
+
+        <div >
+          <label>Phone Number</label>
+          <input type="text" [class.danger]="phoneNumber.invalid && phoneNumber.touched" formControlName="phoneNumber">
+          <div *ngIf="phoneNumber.invalid && phoneNumber.touched">
+            <small class="text-danger" *ngIf="phoneNumber.errors?.pattern">Invalid phone number format</small>
+          </div>          
+        </div>
+
+        <div>
+          <label>Password</label>
+          <input type="password" formControlName="password">
+        </div>
+    
+        <div>
+          <label>Confirm Password</label>
+          <input type="password" [class.danger]="registrationForm.errors?.misMatch" formControlName="confirmPassword">
+          <small class="text-danger" *ngIf="registrationForm.errors?.misMatch">Passwords do not match</small>
+        </div>
+        
+        
+        <button  [disabled]="!registrationForm.valid" type="submit">Register</button>
+      </form>
+     
+    </div>
+</div>
