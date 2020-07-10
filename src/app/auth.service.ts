@@ -12,7 +12,7 @@ export class AuthService {
   constructor(private http:HttpClient, private _router: Router ) { }
 
   registerUser(user){
-    return this.http.post<any>(this._registerUrl,user)
+    return this.http.post<any>(this._registerUrl+"/",user)
   }
 
   loginUser(user){

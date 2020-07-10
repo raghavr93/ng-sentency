@@ -24,18 +24,17 @@ const routes: Routes = [
   },
   {
     path: 'analysis',
-    component: AnalysisComponent,
-    canActivate: [AuthGuard]
+    component: AnalysisComponent
+    //canActivate: [AuthGuard]
   },
   {
     path: 'dashboard',
-    component: DashboardComponent,
-    canActivate: [AuthGuard]
+    component: DashboardComponent
+    //canActivate: [AuthGuard]
   },
   {
     path: 'special',
-    component: SpecialComponent,
-    canActivate: [AuthGuard]
+    component: SpecialComponent
   }
 ];
 

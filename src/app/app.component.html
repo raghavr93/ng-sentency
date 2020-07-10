@@ -1,12 +1,12 @@
 <div class="nav">
     <ul>
         <li class="main" href="#about">Sentency</li>
-        <li style="float:right" class="nav-link" *ngIf="!_authService.loggedIn()" routerLink="/login" routerLinkActive="active">Login</li>
-        <li style="float:right" class="nav-link" *ngIf="!_authService.loggedIn()" routerLink="/register" routerLinkActive="active">Register</li>
-        <li style="float:right" class="nav-link" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()">Logout</li>
-        <li class="nav-link" *ngIf="_authService.loggedIn()" routerLink="/analysis" routerLinkActive="active">Analysis</li> 
-        <li class="nav-link" *ngIf="_authService.loggedIn()" routerLink="/dashboard" routerLinkActive="active">Dashboard</li>
-        <li class="nav-link" *ngIf="_authService.loggedIn()" routerLink="/special" routerLinkActive="active">Home</li> 
+        <li style="float:right" class="nav-link"  routerLink="/login" routerLinkActive="active">Login</li>
+        <li style="float:right" class="nav-link"  routerLink="/register" routerLinkActive="active">Register</li>
+        <li style="float:right" class="nav-link"  (click)="_authService.logoutUser()">Logout</li>
+        <li class="nav-link" routerLink="/analysis" routerLinkActive="active">Analysis</li> 
+        <li class="nav-link"  routerLink="/dashboard" routerLinkActive="active">Dashboard</li>
+        <li class="nav-link"  routerLink="/special" routerLinkActive="active">Home</li> 
     </ul>
 </div>   
 <div>
