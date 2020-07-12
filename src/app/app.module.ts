@@ -12,6 +12,7 @@ import { AuthGuard } from './auth.guard'
 import { TokenInterceptorService } from './token-interceptor.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AnalysisComponent } from './analysis/analysis.component';
+import { AddComponent } from './add/add.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AnalysisComponent } from './analysis/analysis.component';
     LoginComponent,
     SpecialComponent,
     DashboardComponent,
-    AnalysisComponent
+    AnalysisComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,

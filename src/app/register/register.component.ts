@@ -20,8 +20,8 @@ export class RegisterComponent implements OnInit {
     this.registrationForm = this.fb.group({
       name: ['',Validators.required],
       email: ['',[Validators.required,Validators.email]],
-      phoneNumber: ['',Validators.pattern('^[0-9]*$')],
-      password: [''],
+      username: ['',Validators.required],
+      password: ['',Validators.minLength(8)],
       confirmPassword: ['']
       },{validator : PasswordValidator});
   }
@@ -33,8 +33,11 @@ export class RegisterComponent implements OnInit {
   get email() {
     return this.registrationForm.get('email');
   }
-  get phoneNumber() {
-    return this.registrationForm.get('phoneNumber');
+  get username() {
+    return this.registrationForm.get('username');
+  }
+  get password() {
+    return this.registrationForm.get('password');
   }
   
   onSubmit() {

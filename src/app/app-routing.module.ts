@@ -6,6 +6,7 @@ import { SpecialComponent } from './special/special.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AnalysisComponent } from './analysis/analysis.component';
 import { AuthGuard } from './auth.guard';
+import { AddComponent } from './add/add.component';
 
 
 const routes: Routes = [
@@ -23,18 +24,28 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
+    path: 'add',
+    component: AddComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'edit/:id',
+    component: AddComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'analysis',
-    component: AnalysisComponent
-    //canActivate: [AuthGuard]
+    component: AnalysisComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'dashboard',
-    component: DashboardComponent
-    //canActivate: [AuthGuard]
+    component: DashboardComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'special',
-    component: SpecialComponent
+    component: SpecialComponent,
   }
 ];
 

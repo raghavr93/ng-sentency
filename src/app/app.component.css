@@ -3,11 +3,12 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: rgb(99, 99, 99);
   }
   
   li {
     float: left;
+    cursor: default;
   }
   
   li {
@@ -16,6 +17,7 @@ ul {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-family: "itc-avant-garde-gothic-pro", Bold;
   }
   
   /* Change the link color to #111 (black) on hover */
@@ -24,9 +26,9 @@ ul {
   }
 
   .active {
-    background-color: #4CAF50;
+    background-color: #48227E;
   }
 
   .main {
-      background-color:grey ;
+      background-color:rgb(48, 47, 47) ;
   }

@@ -1,14 +1,25 @@
-<table>
-       <thead>
-           <th>Title</th>
-           <th>Sentence</th>
-       </thead>
-       <tbody>
-           <tr class="card" *ngFor="let sen of sentences">
-            <div class="container">
-               <div><td>{{ sen.title }}</td></div>
-               <div><td>{{ sen.body }}</td></div>
+<h2 class="title-text">Sentences</h2>
+<svg class="active-tab-ul" height="5" width="5%" style="display: flex; margin: 2px auto 0;">
+    <line x1="0" y1="0" x2="100%" y2="0" style="stroke:#06BBA0;stroke-width:4"></line>
+</svg>
+<div class="addBtn"><button class="add-btn" *ngIf="_authService.loggedIn()" routerLink="/add">Add Sentence</button></div>
+<div class="main">
+    <ul class="wrap">
+        <li class="single-block" *ngFor="let sen of sentences">
+            <div class="card">
+            <div class="top">
+                <h3>{{ sen.title }}</h3>
             </div>
-           </tr>
-       </tbody>
-</table>
+            <div class="mid">
+                <p>{{ sen.body }}</p>
+            </div>
+            <div class="footer"> 
+                <button class="edit-btn" *ngIf="_authService.loggedIn()" (click)="editSentence(sen._id)">Edit</button>
+                &nbsp;&nbsp;
+                <button class="delete-btn" *ngIf="_authService.loggedIn()" (click)="deleteSentence(sen._id)">Delete</button>
+            </div>
+        </div>
+        </li>
+    </ul>
+</div>
+

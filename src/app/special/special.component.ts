@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SentencesService } from '../sentences.service';
-import { Sentences } from '../models/sentences.model';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-special',
@@ -9,16 +10,38 @@ import { Sentences } from '../models/sentences.model';
 })
 export class SpecialComponent implements OnInit {
   sentences: any;
-  constructor(private _sentence:SentencesService) {
+  constructor(private _sentence:SentencesService,
+    private _router:Router,public _authService:AuthService ) {
 
    }
 
   ngOnInit(): void {
-     this._sentence.onGet().subscribe(
+     this.getSentence();
+  }
+
+  getSentence(){
+    this._sentence.onGet().subscribe(
       res => {this.sentences = res;
       console.log(res)},
       error => console.error('Error!', error)
     );
+  }
+
+  deleteSentence(id:string){
+    if(confirm("Are you sure ?"))
+    {
+      this._sentence.onDelete(id).subscribe(
+        res =>{
+          this.getSentence();
+          console.log(res)},
+          err => console.log(err)
+      )
+    }
+  }
+
+  editSentence(id:string)
+  {
+    this._router.navigate(['/edit',id])
   }
 
 }
