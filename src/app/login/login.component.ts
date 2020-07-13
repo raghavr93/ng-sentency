@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 export class LoginComponent implements OnInit {
 
   loginForm:FormGroup;
+  showErrorMessage: boolean = false;
   constructor(private fb: FormBuilder,private _auth: AuthService,private _router: Router) { }
 
   ngOnInit(): void {
@@ -36,7 +37,10 @@ export class LoginComponent implements OnInit {
            localStorage.setItem('token',res.token),
           this._router.navigate(['/special'])
           console.log(res)},
-      err => console.log(err)
+      err => {
+        this.showErrorMessage = true;
+        console.log(err);
+      }
       );
   }
 

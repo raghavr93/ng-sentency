@@ -24,6 +24,12 @@
         <div class="btn-container">
           <button [disabled]="!loginForm.valid" type="submit">Login</button>
         </div>
+        
+          <div>
+          </div>
+          <div *ngIf="showErrorMessage">
+            <small class="text-danger-error">Invalid Email and password, Please try again!</small>
+          </div>
       </form>
     </div>
 </div>

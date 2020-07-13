@@ -23,6 +23,12 @@ input[type]:focus {
   margin-left: 30px;
 }
 
+.text-danger-error {
+  color: rgb(255, 0, 0);
+  margin-left: 140px;
+  margin-top: auto;
+}
+
 button {
   width: 40%;
   border: none;
